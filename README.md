@@ -1,3 +1,7 @@
+## Demo: [Gallery](https://gallery.topilovdev.uz)
+
+## Instruction to install and use this app:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
