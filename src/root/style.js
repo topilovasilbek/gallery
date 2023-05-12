@@ -11,6 +11,9 @@ export const globalContainer = css`
 `;
 
 export const GlobalStyles = createGlobalStyle`
+    :root {
+      --dark-color:#1F485B;
+    }
     /* Universal selector */
     * {
       margin: 0;
@@ -25,6 +28,10 @@ export const GlobalStyles = createGlobalStyle`
     body {
         font-family: "Montserrat", sans-serif;
         background-color: #fff;
+        color: #1d1d1d;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
     }
     /* Style Scrollbar and Selection */
     ::-webkit-scrollbar {
