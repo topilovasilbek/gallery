@@ -15,7 +15,7 @@ function Auth({ component: Component }) {
   ) : status === "fulfilled" ? (
     <Component />
   ) : (
-    navigate("/signup")
+    navigate("/401")
   );
 }
 

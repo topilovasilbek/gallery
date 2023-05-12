@@ -8,6 +8,8 @@ const HomePage = lazy(() => import("./../pages/Home"));
 const HomeImages = lazy(() => import("./../pages/HomeImages"));
 const Profile = lazy(() => import("./../pages/Profile"));
 const SignUp = lazy(() => import("./../pages/SignUp"));
+const NotFound = lazy(() => import("./../pages/404-NotFound/index"));
+const NoPermission = lazy(() => import("./../pages/401-NoPermission/index"));
 
 function Root() {
   return (
@@ -24,8 +26,9 @@ function Root() {
           />
           <Route path="/profile" element={<Auth component={Profile} />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/401" element={<NoPermission />} />
           <Route path="/" element={<Navigate to={"/home"} />} />
-          <Route path="*" element={<h2>404</h2>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </>
