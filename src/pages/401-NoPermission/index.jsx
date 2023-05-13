@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import HelmetComponent from "./helmet";
 
 function NoPermission(props) {
-    return (
-        <div>
-            no permission
-        </div>
-    );
+  return (
+    <>
+      <HelmetComponent />
+      no permission
+    </>
+  );
 }
 
 export default NoPermission;

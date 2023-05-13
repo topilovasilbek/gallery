@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SignUpComponent from "./../../components/SignUp/index";
+import HelmetComponent from "./helmet";
 
 function SignUp(props) {
   const [status, setStatus] = useState("loading");
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (5 > 5) setStatus("fulfilled");
+    if (5 > 6) setStatus("fulfilled");
     else setStatus("rejected");
   }, []);
 
@@ -16,7 +17,10 @@ function SignUp(props) {
   ) : status === "fulfilled" ? (
     navigate("/")
   ) : (
-    <SignUpComponent />
+    <>
+      <HelmetComponent />
+      <SignUpComponent />
+    </>
   );
 }
 

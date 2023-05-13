@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import HelmetComponent from "./helmet";
 
 function HomeImages(props) {
-    return (
-        <div>
-            home images / category
-        </div>
-    );
+  return (
+    <>
+      <HelmetComponent />
+      home images / category
+    </>
+  );
 }
 
 export default HomeImages;

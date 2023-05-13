@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import HelmetComponent from "./helmet";
 
 function Profile(props) {
-    return (
-        <div>
-            profile
-        </div>
-    );
+  return (
+    <>
+      <HelmetComponent />
+      profile
+    </>
+  );
 }
 
 export default Profile;

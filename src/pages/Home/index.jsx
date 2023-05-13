@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import HelmetComponent from "./helmet";
 
 function HomePage(props) {
-    return (
-        <div>
-            Home page
-        </div>
-    );
+  return (
+    <>
+      <HelmetComponent />
+      Home page
+    </>
+  );
 }
 
 export default HomePage;

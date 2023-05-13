@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import HelmetComponent from "./helmet";
 
 function NotFound(props) {
-    return (
-        <div>
-            not found
-        </div>
-    );
+  return (
+    <>
+      <HelmetComponent />
+      not found
+    </>
+  );
 }
 
 export default NotFound;
