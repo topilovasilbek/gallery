@@ -12,7 +12,8 @@ export const globalContainer = css`
 
 export const GlobalStyles = createGlobalStyle`
     :root {
-      --dark-color:#1F485B;
+      --light-blue:#43697b;
+      --dark-blue:#1F485B;
     }
     /* Universal selector */
     * {
@@ -42,11 +43,11 @@ export const GlobalStyles = createGlobalStyle`
         box-shadow: inset 1px 1px 2px rgba(13, 38, 59, 0.75);
     }
     ::-webkit-scrollbar-thumb {
-        background-color: darkBlue;
+        background-color: var(--dark-blue);
         border: 2px solid transparent;
     }
     *::selection {
-        background: lightblue;
+        background: var(--dark-blue);
         color: #fff;
         text-shadow: none;
     }
