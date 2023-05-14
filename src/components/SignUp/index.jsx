@@ -1,18 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, FormGroup, Title } from "./style";
 import { getMaxTime } from "../../resources/getMaxTime";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SignUpComponent() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // navigate("/");
+    if (loading) return;
+    setLoading(true);
+    var formData = new FormData(e.target);
+    let obj = Object.fromEntries(formData);
+    delete obj.password;
+    let data = JSON.stringify(obj);
+    fetch("https://jsonplaceholder.typicode.com/users", {
+      method: "POST",
+      body: data,
+    }).finally(() => {
+      setTimeout(() => {
+        localStorage.setItem("user", data);
+        setLoading(false);
+        navigate("/");
+      }, 1000);
+    });
   };
 
   return (
-    <Container>
+    <Container loading={loading}>
       <form onSubmit={handleSubmit}>
         <Title>Sign Up</Title>
         <FormGroup>
@@ -91,7 +107,7 @@ function SignUpComponent() {
             required
           />
         </FormGroup>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit {loading && <span></span>}</button>
       </form>
     </Container>
   );

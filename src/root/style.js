@@ -10,6 +10,29 @@ export const globalContainer = css`
   }
 `;
 
+export const globalButton = css`
+  padding: 7px 25px;
+  min-width: 100px;
+  max-width: 150px;
+  margin: 0 auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: transparent;
+  border: 1px solid var(--dark-blue);
+  border-radius: 3px;
+  color: var(--dark-blue);
+  transition: 0.1s linear;
+
+  &:active {
+    transform: translateY(1.5px);
+  }
+`;
+
 export const GlobalStyles = createGlobalStyle`
     :root {
       --light-blue:#43697b;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { globalButton } from "./../../root/style";
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -43,21 +44,29 @@ export const Container = styled.div`
     }
 
     button {
-      padding: 7px 25px;
-      min-width: 100px;
-      max-width: 150px;
-      margin: 0 auto;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 15px;
-      font-weight: 600;
-      background-color: transparent;
-      border: 1px solid var(--dark-blue);
-      border-radius: 3px;
-      color: var(--dark-blue);
+      ${globalButton};
+      gap: 10px;
+      cursor: ${({ loading }) => (loading ? "not-allowed" : "pointer")};
+
+      span {
+        width: 15px;
+        height: 15px;
+        border: 1.5px dashed var(--dark-blue);
+        border-radius: 50%;
+        animation-name: spinner;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes spinner {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
     }
   }
 `;

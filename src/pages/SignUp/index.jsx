@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SignUpComponent from "./../../components/SignUp/index";
 import HelmetComponent from "./helmet";
+const SignUpComponent = lazy(() => import("./../../components/SignUp"));
 
-function SignUp(props) {
+function SignUp() {
   const [status, setStatus] = useState("loading");
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (5 > 6) setStatus("fulfilled");
+    if (localStorage.getItem("user")) setStatus("fulfilled");
     else setStatus("rejected");
   }, []);
 

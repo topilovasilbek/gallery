@@ -6,7 +6,7 @@ function Auth({ component: Component }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (5 > 3) setStatus("fulfilled");
+    if (localStorage.getItem("user")) setStatus("fulfilled");
     else setStatus("rejected");
   }, []);
 
@@ -15,7 +15,7 @@ function Auth({ component: Component }) {
   ) : status === "fulfilled" ? (
     <Component />
   ) : (
-    navigate("/401")
+    navigate("/signup")
   );
 }
 
