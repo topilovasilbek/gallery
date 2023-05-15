@@ -3,12 +3,12 @@ import HelmetComponent from "./helmet";
 import ToTopButton from "../components/ToTopButton";
 import { GlobalStyles } from "./style";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Auth from "./../components/Auth/index";
+import Auth from "./../components/Auth";
+import Loader from "../components/Loader";
 const HomePage = lazy(() => import("./../pages/Home"));
-const HomeImages = lazy(() => import("./../pages/HomeImages"));
 const Profile = lazy(() => import("./../pages/Profile"));
 const SignUp = lazy(() => import("./../pages/SignUp"));
-const NotFound = lazy(() => import("./../pages/404-NotFound/index"));
+const NotFound = lazy(() => import("./../pages/404-NotFound"));
 
 function Root() {
   return (
@@ -16,13 +16,9 @@ function Root() {
       <HelmetComponent />
       <ToTopButton />
       <GlobalStyles />
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/home" element={<Auth component={HomePage} />} />
-          <Route
-            path="/home/images"
-            element={<Auth component={HomeImages} />}
-          />
+          <Route path="/home/*" element={<Auth component={HomePage} />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Navigate to={"/home"} />} />

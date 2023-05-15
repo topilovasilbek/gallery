@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toTop } from "./../../resources/toTop";
 import { ReactComponent as NotFoundSvg } from "../../assets/images/404.svg";
 
-function NotFound(props) {
+function NotFound() {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -20,7 +20,7 @@ function NotFound(props) {
         <NotFoundSvg />
         <Title>Page not found!</Title>
         <button onClick={handleClick}>
-          {localStorage.getItem("user") ? "Go home" : "Sign up"}
+          {localStorage.getItem("user") ? "Back home" : "Sign up"}
         </button>
       </Container>
     </>

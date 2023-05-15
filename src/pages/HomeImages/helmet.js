@@ -1,10 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function HelmetComponent(props) {
+function HelmetComponent({ category }) {
   return (
     <Helmet>
-      <title>Images</title>
+      <title>Images - {category}</title>
     </Helmet>
   );
 }

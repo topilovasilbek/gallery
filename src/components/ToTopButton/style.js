@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 export const BackToTopButton = styled.button`
   display: inline-block;
-  background-color: darkblue;
+  background-color: var(--dark-blue);
   width: 38px;
   height: 38px;
   text-align: center;

@@ -2,10 +2,10 @@ import React from "react";
 import HelmetComponent from "./helmet";
 import { Container, Title } from "./style";
 import { useNavigate } from "react-router-dom";
-import { toTop } from "./../../resources/toTop";
+import { toTop } from "../../resources/toTop";
 import { ReactComponent as UnAuthorized } from "../../assets/images/401.svg";
 
-function NoPermission(props) {
+function NoPermission() {
   const navigate = useNavigate();
 
   return (

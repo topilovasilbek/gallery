@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { globalButton, globalContainer } from "./../../root/style";
+import { globalButton, globalContainer } from "../../root/style";
 
 export const Container = styled.div`
   ${globalContainer};

@@ -1,6 +1,7 @@
 import React, { lazy, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HelmetComponent from "./helmet";
+import Loader from "./../../components/Loader";
 const SignUpComponent = lazy(() => import("./../../components/SignUp"));
 
 function SignUp() {
@@ -13,7 +14,7 @@ function SignUp() {
   }, []);
 
   return status === "loading" ? (
-    <h2>loading</h2>
+    <Loader />
   ) : status === "fulfilled" ? (
     navigate("/")
   ) : (

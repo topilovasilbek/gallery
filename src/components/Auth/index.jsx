@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Loader from "./../Loader";
 
 function Auth({ component: Component }) {
   const [status, setStatus] = useState("loading");
@@ -11,7 +12,7 @@ function Auth({ component: Component }) {
   }, []);
 
   return status === "loading" ? (
-    <h2>loading</h2>
+    <Loader />
   ) : status === "fulfilled" ? (
     <Component />
   ) : (

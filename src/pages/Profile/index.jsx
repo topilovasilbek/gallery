@@ -1,9 +1,11 @@
 import React, { lazy, useEffect, useState } from "react";
 import HelmetComponent from "./helmet";
+import Loader from "./../../components/Loader";
+import Navbar from "../../components/Navbar";
 const ProfileComponent = lazy(() => import("./../../components/Profile"));
-const NoPermission = lazy(() => import("./../401-NoPermission/index"));
+const NoPermission = lazy(() => import("../../components/401-NoPermission"));
 
-function Profile(props) {
+function Profile() {
   const [status, setStatus] = useState("loading");
 
   useEffect(() => {
@@ -12,12 +14,13 @@ function Profile(props) {
   }, []);
 
   return status === "loading" ? (
-    <h2>loading</h2>
+    <Loader />
   ) : status === "rejected" ? (
     <NoPermission />
   ) : (
     <>
       <HelmetComponent />
+      <Navbar />
       <ProfileComponent />
     </>
   );
