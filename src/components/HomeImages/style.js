@@ -23,6 +23,16 @@ export const Image = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 900px) {
+    width: calc(25% - 15px);
+  }
+  @media screen and (max-width: 700px) {
+    width: calc(100% / 3 - 40px / 3);
+  }
+  @media screen and (max-width: 500px) {
+    width: calc(50% - 10px);
+  }
 `;
 
 export const Title = styled.h2`
