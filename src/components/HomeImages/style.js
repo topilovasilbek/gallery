@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { globalContainer } from "../../root/style";
 
 export const HomeImagesDiv = styled.div`
+  min-height: 100vh;
   background-color: #fff;
-  padding-block: 20px;
+  padding-block: 20px 100px;
 `;
 
 export const Container = styled.div`

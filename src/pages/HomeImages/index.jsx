@@ -17,7 +17,7 @@ function HomeImages() {
         if (res?.status !== "success") navigate("/404");
         setStatus("success");
       });
-  }, [category]);
+  }, [category, navigate]);
 
   return (
     <>

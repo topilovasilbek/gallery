@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { globalContainer } from "./../../root/style";
 
 export const ProfileDiv = styled.div`
+  min-height: 100vh;
   background-color: #fff;
   padding-block: 20px;
 `;

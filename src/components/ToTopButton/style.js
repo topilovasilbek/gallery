@@ -20,6 +20,7 @@ export const BackToTopButton = styled.button`
   box-sizing: border-box;
   opacity: 0;
   visibility: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   svg {
     width: 100%;

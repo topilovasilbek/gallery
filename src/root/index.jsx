@@ -1,10 +1,12 @@
 import React, { Suspense, lazy } from "react";
 import HelmetComponent from "./helmet";
+import Footer from "./../components/Footer";
 import ToTopButton from "../components/ToTopButton";
 import { GlobalStyles } from "./style";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Auth from "./../components/Auth";
 import Loader from "../components/Loader";
+
 const HomePage = lazy(() => import("./../pages/Home"));
 const Profile = lazy(() => import("./../pages/Profile"));
 const SignUp = lazy(() => import("./../pages/SignUp"));
@@ -25,6 +27,7 @@ function Root() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
+      <Footer />
     </>
   );
 }
