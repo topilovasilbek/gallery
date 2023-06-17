@@ -26,8 +26,8 @@ function Root() {
           <Route path="/" element={<Navigate to={"/home"} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </Suspense>
-      <Footer />
     </>
   );
 }
